@@ -1,76 +1,88 @@
+/* 1. ገጹን በማንኛውም ስክሪን መሃል ላይ ለማምጣት */
 body {
-    background-color: #f0f2f5;
+    background-color: whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: sans-serif;
 }
 
+/* 2. ዋናው የካልኩሌተር ሳጥን - Responsive (ለስልክ ተስማሚ) */
 .calculator {
-    background-color: #2c3e50;
-    width: 90%;
-    max-width: 400px; /* በኮምፒውተር ከዚህ አይሰፋም */
+    background-color: darkslaterey; /* ጥቁር የሚል ቀለም ካልሰራ 'darkslategrey' ተጠቀም */
+    background-color: #2c3e50; 
+    width: 90%;          
+    max-width: 380px;    
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px black;
+    box-sizing: border-box; 
 }
 
+/* 3. የውጤት ማሳያ (Screen) */
 #display {
     width: 100%;
-    height: 60px;
-    background-color: #ecf0f1;
+    height: 70px;
+    background-color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     margin-bottom: 20px;
-    font-size: 28px;
+    font-size: 30px;
     text-align: right;
-    padding: 10px;
+    padding: 15px;
     box-sizing: border-box;
-    color: #333;
+    color: black;
+    font-weight: bold;
 }
 
+/* 4. በተኖቹን በረድፍ ለማስቀመጥ */
 .buttons {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px; 
 }
 
+/* 5. የሁሉም በተኖች አጠቃላይ መልክ */
 button {
-    padding: 15px;
+    padding: 15px 5px;
     font-size: 18px;
     border: none;
-    border-radius: 8px;
-    background-color: #34495e;
+    border-radius: 10px;
+    background-color: dimgray; /* ደብዘዝ ያለ ጥቁር */
     color: white;
     cursor: pointer;
-    transition: 0.2s;
+    font-weight: bold;
 }
 
-button:hover {
-    background-color: #4b6584;
+/* 6. ለየት ያሉ በተኖች ቀለማት በሰው ቋንቋ */
+
+.operator { 
+    background-color: orange; 
 }
 
-.operator { background-color: #f39c12; }
-.red { background-color: #e74c3c; }
-.sci { background-color: #8e44ad; font-size: 14px; }
+.red { 
+    background-color: red; 
+}
+
+.sci { 
+    background-color: purple; 
+}
 
 #equal {
-    background-color: #27ae60;
-    grid-row: span 2;
+    background-color: green;
+    grid-row: span 2; /* ቁመቱ የሁለት በተን ያህል እንዲሆን */
 }
 
-.zero { grid-column: span 2; }
+.zero { 
+    grid-column: span 2; /* ጎኑ የሁለት በተን ያህል እንዲሆን */
+}
 
-/* ለስልክ (Mobile) ማስተካከያ */
-@media (max-width: 480px) {
+/* 7. ለስልክ ማስተካከያ (ስክሪኑ ሲያንስ በተኖቹ ትንሽ እንዲቀንሱ) */
+@media (max-width: 400px) {
     button {
-        padding: 12px;
+        padding: 12px 2px;
         font-size: 16px;
-    }
-    #display {
-        height: 50px;
-        font-size: 22px;
     }
 }
