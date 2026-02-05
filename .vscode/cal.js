@@ -3,7 +3,7 @@ let isCalculated = false;
 
 function appendToDisplay(input) {
     if (isCalculated && !isNaN(input)) {
-        display.value = "";
+     display.value = "";
     }
     display.value += input;
     isCalculated = false;
